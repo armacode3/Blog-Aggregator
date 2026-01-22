@@ -1,8 +1,11 @@
 import { CommandsRegistry, registerCommand, runCommand } from './commands/commands.js';
-import { handlerLogin } from './commands/users.js';
-function main() {
+import { handlerLogin } from './commands/command_login.js';
+import { handlerRegister } from './commands/command_register.js';
+
+async function main() {
     let registry: CommandsRegistry = {};
     registerCommand(registry, "login", handlerLogin);
+    registerCommand(registry, "register", handlerRegister)
 
     let args: string[] = process.argv.slice(2);
 
@@ -15,11 +18,17 @@ function main() {
     args = args.slice(1);
 
     try {
-        runCommand(registry, cmdName, ...args);
+        await runCommand(registry, cmdName, ...args);
     } catch (error) {
-        console.error(error);
+        if (error instanceof Error) {
+            console.error(`An error occurred: ${error.message}`);
+        } else {
+            console.error(error);
+        }
         process.exit(1);
     }
+
+    process.exit(0);
 }
 
 main();
