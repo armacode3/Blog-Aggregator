@@ -8,7 +8,7 @@ export function registerCommand(registry: CommandsRegistry, cmdName: string, han
 
 export async function runCommand(registry: CommandsRegistry, cmdName: string, ...args: string[]) {
     if (cmdName in registry) {
-        registry[cmdName](cmdName, ...args);
+        await registry[cmdName](cmdName, ...args);
         return;
     }
 

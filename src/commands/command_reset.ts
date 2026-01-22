@@ -1,0 +1,7 @@
+import { deleteUser } from "../lib/db/queries/users";
+
+export async function handlerReset(cmdName: string, ...args: string[]) {
+    await deleteUser();
+
+    console.log("Users reset");
+}
