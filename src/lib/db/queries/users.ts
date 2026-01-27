@@ -14,6 +14,12 @@ export async function getUser(name: string) {
     return result[0];
 }
 
+export async function getUsers() {
+    const result = await db.select({ name: users.name, }).from(users);
+
+    return result;
+}
+
 export async function deleteUser() {
     await db.execute(sql.raw(`TRUNCATE TABLE users;`));
     console.log("Table truncated successfully");

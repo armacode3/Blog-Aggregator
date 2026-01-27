@@ -1,0 +1,7 @@
+import { fetchFeed } from "../lib/rss";
+
+export async function handlerAgg(cmdName: string, ...args: string[]) {
+    const feed = await fetchFeed("https://www.wagslane.dev/index.xml");
+    const feedDatastr = JSON.stringify(feed, null, 2);
+    console.log(feedDatastr);
+}   
