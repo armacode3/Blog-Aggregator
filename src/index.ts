@@ -4,6 +4,7 @@ import { handlerRegister } from './commands/command_register.js';
 import { handlerReset } from './commands/command_reset.js';
 import { handlerUsers } from './commands/command_users.js';
 import { handlerAgg } from './commands/aggregate.js';
+import { addFeed } from './commands/command_feed.js';
 
 async function main() {
     let registry: CommandsRegistry = {};
@@ -12,6 +13,7 @@ async function main() {
     registerCommand(registry, "reset", handlerReset);
     registerCommand(registry, "users", handlerUsers);
     registerCommand(registry, "agg", handlerAgg);
+    registerCommand(registry, "addfeed", addFeed);
 
     let args: string[] = process.argv.slice(2);
 

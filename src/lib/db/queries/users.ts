@@ -25,3 +25,5 @@ export async function deleteUser() {
     console.log("Table truncated successfully");
     
 }
+
+export type User = typeof users.$inferSelect;
