@@ -21,7 +21,7 @@ export async function getUsers() {
 }
 
 export async function deleteUser() {
-    await db.execute(sql.raw(`TRUNCATE TABLE users;`));
+    await db.execute(sql.raw(`TRUNCATE TABLE users CASCADE;`));
     console.log("Table truncated successfully");
     
 }

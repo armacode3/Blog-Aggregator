@@ -1,5 +1,5 @@
-import { getUsers } from "../lib/db/queries/users";
-import { readConfig } from "../config";
+import { getUsers } from "../lib/db/queries/users.js";
+import { readConfig } from "../config.js";
 
 export async function handlerUsers(cmdName: string, ...args: string[]) {
     const users = await getUsers();

@@ -1,5 +1,5 @@
-import { setUser } from 'src/config';
-import { createUser, getUser } from '../lib/db/queries/users';
+import { setUser } from 'src/config.js';
+import { createUser, getUser } from '../lib/db/queries/users.js';
 
 export async function handlerRegister(cmdName: string, ...args: string[]) {
     if (args.length !== 1) {

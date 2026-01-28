@@ -5,15 +5,8 @@
     {
       "idx": 0,
       "version": "7",
-      "when": 1769050542794,
-      "tag": "0000_massive_madrox",
-      "breakpoints": true
-    },
-    {
-      "idx": 1,
-      "version": "7",
-      "when": 1769537103393,
-      "tag": "0001_large_amphibian",
+      "when": 1769538179802,
+      "tag": "0000_slippery_bloodstrike",
       "breakpoints": true
     }
   ]
